@@ -24,7 +24,7 @@
         }
 
         h2 {
-            color: #333;
+            color: white;
         }
 
         input {
@@ -59,21 +59,21 @@
 </head>
 <body>
     <div class="container">
-        <h2>Quelle est ton prénom ?</h2>
-        <input type="text" id="prenom" placeholder="Entre ton prénom">
+        <h2>Pour accéder à cette page vous devez prouvez que vous êtes bien Madame Izel Çinar. Qu'a-t-on mangé lors de notre premier date à la plage ?<br> </h2>
+        <input type="text" id="prenom" placeholder="Ne me parle même plus si tu te trompes">
         <button onclick="verifierPrenom()">Répondre</button>
         <p id="messageErreur" class="error"></p>
     </div>
 
     <script>
         function verifierPrenom() {
-            const prenomAutorises = ["Mathieu", "Marie", "Jean"];
+            const prenomAutorises = ["Sushi", "sushi", "Sushis","sushis","Des Sushis","Des sushis","des Sushis","des sushis",];
             let prenomUtilisateur = document.getElementById("prenom").value.trim();
 
             if (prenomAutorises.includes(prenomUtilisateur)) {
                 window.location.href = "Valentine.html"; // Redirection vers la page Valentine.html
             } else {
-                document.getElementById("messageErreur").textContent = "Accès refusé. Prénom non reconnu.";
+                document.getElementById("messageErreur").textContent = "Faux ! Mais qui êtes-vous ??";
             }
         }
     </script>
