@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Pour toi ❤️</title>
+    <title>My love</title>
+    <link rel="icon" type="image/x-icon" href="red_heart.ico">
     <style>
         body {
             display: flex;
@@ -206,6 +207,9 @@
     <audio id="no-sound" preload="auto">
         <source src="Audio_valentine_no.mp3" type="audio/mpeg">
     </audio>
+    <audio id="letter-sound" preload="auto">
+        <source src="Audio_letter_opening.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
         const container = document.querySelector('.container');
@@ -214,11 +218,13 @@
         const responseMessage = document.querySelector('.response-message');
         const yesSound = document.getElementById('yes-sound');
         const noSound = document.getElementById('no-sound');
+        const letterSound = document.getElementById('letter-sound');
         let isOpen = false;
 
         container.addEventListener('click', () => {
             if (!isOpen) {
                 isOpen = true;
+                letterSound.play().catch(e => console.log('Error playing sound:', e));
                 envelope.classList.add('open');
                 setTimeout(() => {
                     letter.classList.add('show');
