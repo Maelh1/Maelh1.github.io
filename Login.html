@@ -65,21 +65,16 @@
         <button onclick="verifierPrenom()">Répondre</button>
         <p id="messageErreur" class="error"></p>
     </div>
-    <audio id="accept-sound" preload="auto">
-        <source src="Audio_bonne_reponse.mp3" type="audio/mpeg">
-    </audio>
     <audio id="no-sound" preload="auto">
         <source src="Audio_valentine_no.mp3" type="audio/mpeg">
     </audio>
     <script>
         function verifierPrenom() {
             const prenomAutorises = ["Sushi", "sushi", "Sushis","sushis","Des Sushis","Des sushis","des Sushis","des sushis",];
-            const acceptSound = document.getElementById('accept-sound');
             const noSound = document.getElementById('no-sound');
             let prenomUtilisateur = document.getElementById("prenom").value.trim();
 
             if (prenomAutorises.includes(prenomUtilisateur)) {
-                acceptSound.play().catch(e => console.log('Error playing sound:', e));
                 window.location.href = "Valentine.html"; // Redirection vers la page Valentine.html
             } else {
                 noSound.play().catch(e => console.log('Error playing sound:', e));
